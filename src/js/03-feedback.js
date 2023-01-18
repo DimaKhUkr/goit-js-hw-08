@@ -31,6 +31,11 @@ function showAddedText() {
 
 function onSubmitBtn(e) {
   e.preventDefault();
+
+  if (refs.input.value < 1 || refs.textarea.value < 1) {
+    return alert('Please enter the correct data');
+  }
+
   formDataCreate(e.currentTarget);
   e.currentTarget.reset();
   console.log(userData);

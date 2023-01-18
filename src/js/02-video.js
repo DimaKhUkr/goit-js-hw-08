@@ -10,7 +10,10 @@ player.on(
     localStorage.setItem('videoplayer-current-time', time.seconds);
   }, 1000)
 );
-player.setCurrentTime(localStorage.getItem('videoplayer-current-time'));
+
+if (localStorage.getItem('videoplayer-current-time')) {
+  player.setCurrentTime(localStorage.getItem('videoplayer-current-time'));
+}
 // player.getVideoTitle().then(function (title) {
 //   console.log('title:', title);
 // });
